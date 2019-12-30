@@ -1,0 +1,19 @@
+{
+  "name": "questionaire",
+  "version": "1.0.0",
+  "description": "Asking for questions",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rackso/questionaire.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rackso/questionaire/issues"
+  },
+  "homepage": "https://github.com/rackso/questionaire#readme"
+}
