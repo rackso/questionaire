@@ -4,16 +4,20 @@
   "description": "Asking for questions",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rackso/questionaire.git"
+    "css": "node ./node_modules/node-sass/bin/node-sass scss -o public/css",
+    "js": "node ./node_modules/babel-cli/bin/babel.js jsx -d public/js",
+    "restart": "rm -rf node_modules/ && npm install",
+    "watch": "npm run watch:css & npm run watch:js",
+    "watch:css": "npm run css && node ./node_modules/node-sass/bin/node-sass scss -wo public/css",
+    "watch:js": "npm run js && node ./node_modules/babel-cli/bin/babel.js jsx -d public/js -w"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rackso/questionaire/issues"
-  },
-  "homepage": "https://github.com/rackso/questionaire#readme"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "node-sass": "^4.13.0"
+  }
 }

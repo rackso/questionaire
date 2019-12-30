@@ -11,21 +11,28 @@
 <script type="text/javascript" src="./js/multiple.js"></script>
 <script type="text/javascript" src="./js/sort.js"></script>
 <script type="text/javascript" src="./js/fill.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
 </head>    
 <body>
 
     <h1>Questions</h1>
 
-    <div id="Presentacion"></div>
+    <div id="Presentacion">
+        This is a presentation
+        <div id="start">Start</div>
+    </div>
 
-    <div id="Preguntas">
-        <div id="p0" class="pregunta" data-question-type="lineal"></div>
-        <div id="p1" class="pregunta" data-question-type="dnd"></div>
-        <div id="p2" class="pregunta" data-question-type="sphere"></div>
-        <div id="p3" class="pregunta" data-question-type="single"></div>
-        <div id="p4" class="pregunta" data-question-type="multiple"></div>
-        <div id="p5" class="pregunta" data-question-type="sort"></div>
-        <div id="p6" class="pregunta" data-question-type="fill"></div>
+    <div id="Questionaire" data-time="80">
+        <div id="clock"></div>
+
+        <div id="p0" class="pregunta" data-qid="A" data-question-type="lineal"></div>
+        <div id="p1" class="pregunta" data-qid="A" data-question-type="dnd"></div>
+        <div id="p2" class="pregunta" data-qid="A" data-question-type="sphere"></div>
+        <div id="p3" class="pregunta" data-qid="A" data-question-type="single"></div>
+        <div id="p4" class="pregunta" data-qid="A" data-question-type="multiple"></div>
+        <div id="p5" class="pregunta" data-qid="A" data-question-type="sort"></div>
+        <div id="p6" class="pregunta" data-qid="A" data-question-type="fill"></div>
 
         <div id="Controls">
             <div class="ctrl-atras">&lt; Atrás</div>
