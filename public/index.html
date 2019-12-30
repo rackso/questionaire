@@ -26,16 +26,73 @@
     <div id="Questionaire" data-time="80">
         <div id="clock"></div>
 
-        <div id="p0" class="pregunta" data-qid="A" data-question-type="lineal"></div>
-        <div id="p1" class="pregunta" data-qid="A" data-question-type="dnd"></div>
-        <div id="p2" class="pregunta" data-qid="A" data-question-type="sphere"></div>
-        <div id="p3" class="pregunta" data-qid="A" data-question-type="single"></div>
-        <div id="p4" class="pregunta" data-qid="A" data-question-type="multiple"></div>
-        <div id="p5" class="pregunta" data-qid="A" data-question-type="sort"></div>
-        <div id="p6" class="pregunta" data-qid="A" data-question-type="fill"></div>
+        <div id="p0" class="pregunta" data-qid="A" data-question-type="lineal">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min="0" data-max="10">-</div>
+        </div>
+        <div id="p1" class="pregunta" data-qid="B" data-question-type="dnd">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min="0" data-max="10">-</div>
+        </div>
+        <div id="p2" class="pregunta" data-qid="C" data-question-type="sphere">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min-x="0" data-max-x="10" data-min-y="0" data-max-y="200">-</div>
+        </div>
+        <div id="p3" class="pregunta" data-qid="D" data-question-type="single">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <input type="radio" name="hashtag1" value="val1" checked="checked">val1
+                <input type="radio" name="hashtag1" value="val2">val2
+                <input type="radio" name="hashtag1" value="val3">val3
+                <input type="radio" name="hashtag1" value="val4">val4
+            </div>
+        </div>
+        <div id="p4" class="pregunta" data-qid="E" data-question-type="multiple">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <input type="checkbox" name="hashtag2" value="val1">value 1
+                <input type="checkbox" name="hashtag2" value="val2">value 2
+                <input type="checkbox" name="hashtag2" value="val3">value 3
+                <input type="checkbox" name="hashtag2" value="val4">value 4
+            </div>
+        </div>
+        <div id="p5" class="pregunta" data-qid="F" data-question-type="sort">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <ul>
+                    <li data-response="hashtag3-1">value 1</li>
+                    <li data-response="hashtag3-2">value 2</li>
+                    <li data-response="hashtag3-3">value 3</li>
+                    <li data-response="hashtag3-4">value 4</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="p6" class="pregunta" data-qid="G" data-question-type="fill">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                Este texto tiene 
+                <select id="hashtag4">
+                    <option value="-" selected="selected">-- Selecciona --</option>
+                    <option value="val1">opcion 1</option>
+                    <option value="val2">opcion 2</option>
+                    <option value="val3">opcion 3</option>
+                    <option value="val4">opcion 4</option>
+                </select>
+                para elegir entre
+                <select id="hashtag5">
+                    <option value="-" selected="selected">-- Selecciona --</option>
+                    <option value="val1">opcion 1</option>
+                    <option value="val2">opcion 2</option>
+                    <option value="val3">opcion 3</option>
+                    <option value="val4">opcion 4</option>
+                </select>
+            </div>
+        </div>
 
         <div id="Controls">
             <div class="ctrl-atras">&lt; Atrás</div>
+            <div class="ctrl-fin">Finalizar</div>
             <div class="ctrl-alante">Adelante &gt;</div>
         </div>
     </div>
