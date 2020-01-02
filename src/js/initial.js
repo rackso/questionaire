@@ -1,3 +1,5 @@
+let clk;
+
 const PrepareQuestions = () => {
     $('#Questionaire .pregunta').each((idx, elem) => {
         switch (elem.dataset.questionType) {
@@ -23,31 +25,50 @@ const OpenQuestion = (param) => {
 
 }
 
-const FinalizaTest = () => {
+const getQuestionAnswers = () => {
+    return ''
+}
 
+const CallEndTest = () => {
+    $('#Questions, #Controls, #reloj').hide()
+    alert('Fin del test')
+    const ajaxOptions = {
+        url: 'https://',
+        data: getQuestionAnswers(),
+        dataType: 'json',
+        timeout: 500,
+        success: () => {},
+        error: () => {},
+        complete: () => {},
+        type: 'POST',
+        async: true,
+        contentType: 'application/json'
+    }
+    $.ajax(ajaxOptions)
+}
+
+const FinalizaTest = () => {
+    if (confirm('Deseas finalizar el test')) { clk.end() }
 }
 
 const StartClock = () => {
-    const clk = new Clock($('#reloj progress'))
+    clk = new Clock($('#reloj progress'), 9, CallEndTest)
     clk.start()
-    return clk
 }
 
 $(document).ready(() => {
-    let clk;
-
-    $('#Questions, .pregunta, #Controls, #reloj').hide();
+    $('#Questions, #Controls, #reloj').hide()
 
     $('.ctrl-atras').click(() => { OpenQuestion(-1); })
     $('.ctrl-alante').click(() => { OpenQuestion(1); })
-    $('.ctrl-fin').click(FinalizaTest)
+    $('.ctrl-fin').click(CallEndTest)
 
     $('#start').click(() => {
-        PrepareQuestions();
-        $('#Presentacion').hide();
-        $('#Questions, #Controls, #reloj').show();
-        clk = StartClock();
-        OpenQuestion(0);
+        PrepareQuestions()
+        $('#Presentacion').hide()
+        $('#Questions, #Controls, #reloj').show()
+        StartClock()
+        OpenQuestion(0)
     })
 
 })

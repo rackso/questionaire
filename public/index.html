@@ -28,19 +28,7 @@
     <div id="Questionaire" data-time="80">
         <div id="reloj"><progress max="6000" value="6000">6000</progress></div>
 
-        <div id="p0" class="pregunta" data-qid="A" data-question-type="lineal">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min="0" data-max="10">-</div>
-        </div>
-        <div id="p1" class="pregunta" data-qid="B" data-question-type="dnd">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min="0" data-max="10">-</div>
-        </div>
-        <div id="p2" class="pregunta" data-qid="C" data-question-type="sphere">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min-x="0" data-max-x="10" data-min-y="0" data-max-y="200">-</div>
-        </div>
-        <div id="p3" class="pregunta" data-qid="D" data-question-type="single">
+        <div class="pregunta oculta" data-qid="single" data-question-type="single">
             <div class="enunciado">Enunciado</div>
             <div class="exercise">
                 <input type="radio" name="hashtag1" value="val1" checked="checked">val1
@@ -49,7 +37,19 @@
                 <input type="radio" name="hashtag1" value="val4">val4
             </div>
         </div>
-        <div id="p4" class="pregunta" data-qid="E" data-question-type="multiple">
+        <div class="pregunta oculta" data-qid="lineal" data-question-type="lineal">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min="0" data-max="10">-</div>
+        </div>
+        <div class="pregunta oculta" data-qid="dnd" data-question-type="dnd">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min="0" data-max="10">-</div>
+        </div>
+        <div class="pregunta oculta" data-qid="sphere" data-question-type="sphere">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min-x="0" data-max-x="10" data-min-y="0" data-max-y="200">-</div>
+        </div>
+        <div class="pregunta oculta" data-qid="multiple" data-question-type="multiple">
             <div class="enunciado">Enunciado</div>
             <div class="exercise">
                 <input type="checkbox" name="hashtag2" value="val1">value 1
@@ -58,7 +58,7 @@
                 <input type="checkbox" name="hashtag2" value="val4">value 4
             </div>
         </div>
-        <div id="p5" class="pregunta" data-qid="F" data-question-type="sort">
+        <div class="pregunta oculta" data-qid="sort" data-question-type="sort">
             <div class="enunciado">Enunciado</div>
             <div class="exercise">
                 <ul>
@@ -70,7 +70,7 @@
             </div>
 
         </div>
-        <div id="p6" class="pregunta" data-qid="G" data-question-type="fill">
+        <div class="pregunta oculta" data-qid="fill" data-question-type="fill">
             <div class="enunciado">Enunciado</div>
             <div class="exercise">
                 Este texto tiene 
@@ -98,5 +98,12 @@
             <div class="ctrl-alante">Adelante &gt;</div>
         </div>
     </div>
+
+    <div id="Resultado">
+        Tu resultado es <span id="valresultado">6</span> 
+        Ponlo en Twitter
+    </div>
+
+    <input type="hidden" id="usid" value="usvalue" />
 </body>
 </html>

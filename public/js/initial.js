@@ -1,5 +1,7 @@
 'use strict';
 
+var clk = void 0;
+
 var PrepareQuestions = function PrepareQuestions() {
     $('#Questionaire .pregunta').each(function (idx, elem) {
         switch (elem.dataset.questionType) {
@@ -23,18 +25,41 @@ var PrepareQuestions = function PrepareQuestions() {
 
 var OpenQuestion = function OpenQuestion(param) {};
 
-var FinalizaTest = function FinalizaTest() {};
+var getQuestionAnswers = function getQuestionAnswers() {
+    return '';
+};
+
+var CallEndTest = function CallEndTest() {
+    $('#Questions, #Controls, #reloj').hide();
+    alert('Fin del test');
+    var ajaxOptions = {
+        url: 'https://',
+        data: getQuestionAnswers(),
+        dataType: 'json',
+        timeout: 500,
+        success: function success() {},
+        error: function error() {},
+        complete: function complete() {},
+        type: 'POST',
+        async: true,
+        contentType: 'application/json'
+    };
+    $.ajax(ajaxOptions);
+};
+
+var FinalizaTest = function FinalizaTest() {
+    if (confirm('Deseas finalizar el test')) {
+        clk.end();
+    }
+};
 
 var StartClock = function StartClock() {
-    var clk = new Clock($('#reloj progress'));
+    clk = new Clock($('#reloj progress'), 9, CallEndTest);
     clk.start();
-    return clk;
 };
 
 $(document).ready(function () {
-    var clk = void 0;
-
-    $('#Questions, .pregunta, #Controls, #reloj').hide();
+    $('#Questions, #Controls, #reloj').hide();
 
     $('.ctrl-atras').click(function () {
         OpenQuestion(-1);
@@ -42,13 +67,13 @@ $(document).ready(function () {
     $('.ctrl-alante').click(function () {
         OpenQuestion(1);
     });
-    $('.ctrl-fin').click(FinalizaTest);
+    $('.ctrl-fin').click(CallEndTest);
 
     $('#start').click(function () {
         PrepareQuestions();
         $('#Presentacion').hide();
         $('#Questions, #Controls, #reloj').show();
-        clk = StartClock();
+        StartClock();
         OpenQuestion(0);
     });
 });
