@@ -4,12 +4,12 @@
   "description": "Asking for questions",
   "main": "index.html",
   "scripts": {
-    "css": "node ./node_modules/node-sass/bin/node-sass scss -o public/css",
-    "js": "node ./node_modules/babel-cli/bin/babel.js jsx -d public/js",
+    "css": "node ./node_modules/node-sass/bin/node-sass src/scss -o public/css",
+    "js": "node ./node_modules/babel-cli/bin/babel.js src/js -d public/js",
     "restart": "rm -rf node_modules/ && npm install",
     "watch": "npm run watch:css & npm run watch:js",
-    "watch:css": "npm run css && node ./node_modules/node-sass/bin/node-sass scss -wo public/css",
-    "watch:js": "npm run js && node ./node_modules/babel-cli/bin/babel.js jsx -d public/js -w"
+    "watch:css": "npm run css && node ./node_modules/node-sass/bin/node-sass src/scss -wo public/css",
+    "watch:js": "npm run js && node ./node_modules/babel-cli/bin/babel.js src/js -d public/js -w"
   },
   "author": "",
   "license": "ISC",
