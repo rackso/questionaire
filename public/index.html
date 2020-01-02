@@ -1,8 +1,10 @@
 <html>
 <head>
 <script type="text/javascript" src="./vendor/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="./vendor/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="./js/initial.js"></script>
+<script type="text/javascript" src="./js/clock.js"></script>
 
 <script type="text/javascript" src="./js/lineal.js"></script>
 <script type="text/javascript" src="./js/dnd.js"></script>
@@ -12,9 +14,9 @@
 <script type="text/javascript" src="./js/sort.js"></script>
 <script type="text/javascript" src="./js/fill.js"></script>
 
-<script type="text/javascript" src="./js/clock.js"></script>
-
 <link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="./vendor/jquery-ui.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="./vendor/jquery-ui.structure.min.css" media="screen" />
 </head>    
 <body>
 
@@ -28,48 +30,21 @@
     <div id="Questionaire" data-time="80">
         <div id="reloj"><progress max="6000" value="6000">6000</progress></div>
 
-        <div class="pregunta oculta" data-qid="single" data-question-type="single">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise">
-                <input type="radio" name="hashtag1" value="val1" checked="checked">val1
-                <input type="radio" name="hashtag1" value="val2">val2
-                <input type="radio" name="hashtag1" value="val3">val3
-                <input type="radio" name="hashtag1" value="val4">val4
-            </div>
-        </div>
-        <div class="pregunta oculta" data-qid="lineal" data-question-type="lineal">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min="0" data-max="10">-</div>
-        </div>
+
         <div class="pregunta oculta" data-qid="dnd" data-question-type="dnd">
             <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min="0" data-max="10">-</div>
-        </div>
-        <div class="pregunta oculta" data-qid="sphere" data-question-type="sphere">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise" data-min-x="0" data-max-x="10" data-min-y="0" data-max-y="200">-</div>
-        </div>
-        <div class="pregunta oculta" data-qid="multiple" data-question-type="multiple">
-            <div class="enunciado">Enunciado</div>
             <div class="exercise">
-                <input type="checkbox" name="hashtag2" value="val1">value 1
-                <input type="checkbox" name="hashtag2" value="val2">value 2
-                <input type="checkbox" name="hashtag2" value="val3">value 3
-                <input type="checkbox" name="hashtag2" value="val4">value 4
+                <div data-id="elem1">Oscar</div>
+                <div data-id="elem2">Nil</div>
+                <div data-id="elem3">Cristina</div>
+                <div data-id="elem4">Francisca</div>
+                <div data-id="elem5">Gomez</div>
+                <div data-id="elem6">Sanchez</div>
+                <div data-id="elem7">Fernandez</div>
+                <div data-id="elem8">Lozano</div>
             </div>
         </div>
-        <div class="pregunta oculta" data-qid="sort" data-question-type="sort">
-            <div class="enunciado">Enunciado</div>
-            <div class="exercise">
-                <ul>
-                    <li data-response="hashtag3-1">value 1</li>
-                    <li data-response="hashtag3-2">value 2</li>
-                    <li data-response="hashtag3-3">value 3</li>
-                    <li data-response="hashtag3-4">value 4</li>
-                </ul>
-            </div>
 
-        </div>
         <div class="pregunta oculta" data-qid="fill" data-question-type="fill">
             <div class="enunciado">Enunciado</div>
             <div class="exercise">
@@ -90,6 +65,44 @@
                     <option value="val4">opcion 4</option>
                 </select>
             </div>
+        </div>
+        <div class="pregunta oculta" data-qid="single" data-question-type="single">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <input type="radio" name="hashtag1" value="val1" checked="checked">val1
+                <input type="radio" name="hashtag1" value="val2">val2
+                <input type="radio" name="hashtag1" value="val3">val3
+                <input type="radio" name="hashtag1" value="val4">val4
+            </div>
+        </div>
+        <div class="pregunta oculta" data-qid="multiple" data-question-type="multiple">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <input type="checkbox" name="hashtag2" value="val1">value 1
+                <input type="checkbox" name="hashtag2" value="val2">value 2
+                <input type="checkbox" name="hashtag2" value="val3">value 3
+                <input type="checkbox" name="hashtag2" value="val4">value 4
+            </div>
+        </div>
+        <div class="pregunta oculta" data-qid="lineal" data-question-type="lineal">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min="0" data-max="10"></div>
+        </div>
+        <div class="pregunta oculta" data-qid="sphere" data-question-type="sphere">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise" data-min-x="0" data-max-x="10" data-min-y="0" data-max-y="200"></div>
+        </div>
+        <div class="pregunta oculta" data-qid="sort" data-question-type="sort">
+            <div class="enunciado">Enunciado</div>
+            <div class="exercise">
+                <ul>
+                    <li data-response="hashtag3-1">value 1</li>
+                    <li data-response="hashtag3-2">value 2</li>
+                    <li data-response="hashtag3-3">value 3</li>
+                    <li data-response="hashtag3-4">value 4</li>
+                </ul>
+            </div>
+
         </div>
 
         <div id="Controls">

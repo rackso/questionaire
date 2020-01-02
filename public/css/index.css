@@ -1,3 +1,22 @@
 .oculta {
     display: none;
 }
+
+.pregunta[data-qid='lineal'] .exercise {
+    width: 90%;
+    background: #999;
+    height: 20px;
+}
+
+.pregunta[data-qid='sphere'] .exercise {
+    width: 250px;
+    height: 250px;
+    background: #999;
+    border-radius: 50%
+}
+
+.pregunta[data-qid='dnd'] .item {
+    padding: 8px;
+    border: 1px magenta solid;
+    border-radius: 3px;
+}

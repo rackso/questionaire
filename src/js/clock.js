@@ -12,8 +12,7 @@ class Clock {
         $(this.item).val(this.timer).attr('max', this.timer)
         this.objInterval = setInterval(() => {
             const regTime = $(this.item).val()
-            console.log('countdown to ', regTime)
-            if (regTime === 0) { return this.end() }
+            if (regTime <= 0) { return this.end() }
             $(this.item).val(regTime - DECREASE)
         }, DECREASE)
     }
